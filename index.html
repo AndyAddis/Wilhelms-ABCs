@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#1769e0">
+  <meta name="description" content="A colorful alphabet-learning game made especially for Wilhelm.">
+  <title>Wilhelm Learns The Alphabet</title>
+  <link rel="preload" href="assets/wilhelm-cartoon.png?v=5" as="image" fetchpriority="high">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=9">
+</head>
+<body>
+  <main class="app" aria-live="polite">
+    <section class="splash" id="splash" aria-label="Welcome">
+      <div class="confetti" aria-hidden="true"></div>
+      <h1><span>Wilhelm Learns</span><strong>The Alphabet</strong></h1>
+      <img class="wilhelm" id="wilhelm" src="assets/wilhelm-cartoon.png?v=5" width="1122" height="1402" fetchpriority="high" alt="Cartoon Wilhelm wearing yellow goggles and cowboy boots">
+      <button class="skip" id="skip" type="button">Let’s play!</button>
+    </section>
+
+    <section class="board-screen" id="board" aria-labelledby="board-title" hidden>
+      <header>
+        <p class="eyebrow">Pick a letter!</p>
+        <h2 id="board-title">Wilhelm’s ABCs</h2>
+      </header>
+      <div class="letter-grid" id="letter-grid" aria-label="Alphabet letters"></div>
+      <div class="abc-row">
+        <button class="abc-button" id="abc-button" type="button">
+          <span aria-hidden="true">♪</span> ABC’s
+        </button>
+      </div>
+    </section>
+
+    <section class="letter-screen" id="letter-screen" aria-labelledby="selected-letter" hidden>
+      <button class="back-button" id="back-button" type="button" aria-label="Back to all letters">
+        <span aria-hidden="true">‹</span> All letters
+      </button>
+      <div class="letter-card">
+        <div class="big-letter red" id="selected-letter">A</div>
+        <div class="quote-area">
+          <img class="apa" src="assets/apa-cartoon.png?v=4" alt="Cartoon Apa smiling">
+          <div class="speech-card">
+            <p class="apa-says">Apa says…</p>
+            <blockquote id="letter-quote">Your special letter phrase will go here!</blockquote>
+            <button class="audio-button" id="audio-button" type="button" disabled>
+              <span class="play-icon" aria-hidden="true">▶</span>
+              <span id="audio-label">Apa’s recording coming soon</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="song-screen" id="song-screen" aria-labelledby="song-title" hidden>
+      <button class="back-button" id="song-back-button" type="button" aria-label="Back to all letters">
+        <span aria-hidden="true">‹</span> All letters
+      </button>
+      <img class="song-apa" src="assets/apa-cartoon.png?v=4" alt="Cartoon Apa smiling">
+      <div class="song-content">
+        <p class="eyebrow">Sing with Apa!</p>
+        <h2 id="song-title">The ABC Song</h2>
+        <div class="song-grid" id="song-grid" aria-label="The alphabet from A to Z"></div>
+        <button class="audio-button song-audio-button" id="song-audio-button" type="button">
+          <span class="play-icon" aria-hidden="true">▶</span>
+          <span id="song-audio-label">Play the ABC song</span>
+        </button>
+      </div>
+    </section>
+  </main>
+  <script src="app.js?v=10"></script>
+</body>
+</html>
